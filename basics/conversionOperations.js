@@ -42,4 +42,12 @@ console.log(boolean);
 
 //Such conversions takes place 
 
-// #Investigation Studies
+let value = 3;
+let negValue = -value;
+console.log(negValue);
+
+console.log(+true); // +1 but will print 1 only
+// console.log(true+); // error
+console.log(""); // nothing
+console.log(+""); // then conversion ho jaata hai aur 0 o/p.
+
