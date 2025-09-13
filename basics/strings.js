@@ -22,8 +22,34 @@ console.log(gameName.endsWith());
 console.log(gameName.concat()); // space comes bw string and an int 
 console.log(gameName.includes());
 console.log(gameName.isWellFormed());
+/*{
+UTF-16 uses 1code unit and 2 code units
+1 code characters in Basic Multilingual Plane(BMP) -> U+0000 to U+FFFF
+2 code units (a surrogate pair) for characters outside BMP(emojis,rare symbols etc.)
+-> U+10000 to U+10FFFF
+console.log("Hello".isWellFormed()); // true
+console.log("😊".isWellFormed()); // true
+
+let bad = "\uD800"; // high surrogate, no pair
+console.log(bad.isWellFormed()); // false
+let bad = "\uDC00"; // low surrogate, no pair
+console.log(bad.isWellFormed()); // false
+let bad = "\uDC00\uD800"; // invalid order
+console.log(bad.isWellFormed()); // false
+let bad = "\uD800";  
+console.log(bad.toWellFormed()); // "�"
+}*/
 console.log(gameName.lastIndexOf());
-console.log(gameName.localeCompare);
+console.log(gameName.localeCompare); //compare string also including the local languages and accents
+/*
+referenceString.localeCompare(compareString)
+referenceString.localeCompare(compareString, locales)
+
+console.log("hello".localeCompare("helloo")); // -1;
+console.log("helloo".localeCompare("hello")); // 1;
+console.log("hello".localeCompare("hello")); // 0 
+
+*/
 console.log(gameName.match());
 console.log(gameName.matchAll());
 console.log(gameName.normalize());
